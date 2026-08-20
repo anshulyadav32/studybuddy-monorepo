@@ -1,0 +1,265 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  STUDENT
+  TEACHER
+  ADMIN
+  PARENT
+}
+
+enum SubscriptionStatus {
+  FREE
+  TRIAL
+  ACTIVE
+  PAST_DUE
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCESS
+  FAILED
+  REFUNDED
+}
+
+enum AssessmentType {
+  MCQ
+  QUIZ
+  TEST
+}
+
+enum AttemptStatus {
+  DRAFT
+  IN_PROGRESS
+  SUBMITTED
+  GRADED
+}
+
+model User {
+  id             String             @id @default(uuid())
+  email          String             @unique
+  name           String
+  passwordHash   String
+  role           Role               @default(STUDENT)
+  createdAt      DateTime           @default(now())
+  updatedAt      DateTime           @updatedAt
+  profile        Profile?
+  coursesTaught  Course[]           @relation("TeacherCourses")
+  enrollments    CourseEnrollment[]
+  progress       LearningProgress[]
+  attempts       AssessmentAttempt[]
+  subscriptions  Subscription[]
+  notifications  Notification[]
+  auditLogs      AuditLog[]
+  parentLinks    ParentChildLink[]  @relation("ParentLinks")
+  childLinks     ParentChildLink[]  @relation("ChildLinks")
+}
+
+model Profile {
+  id          String   @id @default(uuid())
+  userId      String   @unique
+  phone       String?
+  avatarUrl   String?
+  classLevel  String?
+  board       String?
+  preferences Json?
+  user        User     @relation(fields: [userId], references: [id])
+}
+
+model StudyClass {
+  id          String    @id @default(uuid())
+  name        String
+  board       String?
+  createdAt   DateTime  @default(now())
+  subjects    Subject[]
+  enrollments CourseEnrollment[]
+}
+
+model Subject {
+  id        String     @id @default(uuid())
+  name      String
+  classId   String
+  class     StudyClass @relation(fields: [classId], references: [id])
+  courses   Course[]
+}
+
+model Course {
+  id          String             @id @default(uuid())
+  title       String
+  slug        String             @unique
+  subjectId   String
+  subject     Subject            @relation(fields: [subjectId], references: [id])
+  teacherId   String
+  teacher     User               @relation("TeacherCourses", fields: [teacherId], references: [id])
+  chapters    Chapter[]
+  enrollments CourseEnrollment[]
+  assessments Assessment[]
+  createdAt   DateTime           @default(now())
+}
+
+model Chapter {
+  id        String   @id @default(uuid())
+  title     String
+  courseId  String
+  order     Int      @default(0)
+  course    Course   @relation(fields: [courseId], references: [id])
+  lessons   Lesson[]
+}
+
+model Lesson {
+  id        String   @id @default(uuid())
+  title     String
+  chapterId String
+  order     Int      @default(0)
+  chapter   Chapter  @relation(fields: [chapterId], references: [id])
+  media     MediaAsset[]
+  notes     Note[]
+  questions Question[]
+  assessments Assessment[]
+}
+
+model MediaAsset {
+  id          String   @id @default(uuid())
+  lessonId    String
+  lesson      Lesson   @relation(fields: [lessonId], references: [id])
+  type        String
+  url         String
+  thumbnail   String?
+  durationSec Int?
+  createdAt   DateTime @default(now())
+}
+
+model Note {
+  id        String   @id @default(uuid())
+  lessonId  String
+  lesson    Lesson   @relation(fields: [lessonId], references: [id])
+  title     String?
+  content   String
+  createdAt DateTime @default(now())
+}
+
+model Question {
+  id        String   @id @default(uuid())
+  lessonId  String
+  lesson    Lesson   @relation(fields: [lessonId], references: [id])
+  text      String
+  options   Json
+  answer    String
+  explanation String?
+  createdAt DateTime @default(now())
+}
+
+model Assessment {
+  id          String             @id @default(uuid())
+  courseId    String
+  lessonId    String?
+  title       String
+  type        AssessmentType
+  questions   Json
+  createdAt   DateTime           @default(now())
+  course      Course             @relation(fields: [courseId], references: [id])
+  lesson      Lesson?            @relation(fields: [lessonId], references: [id])
+  attempts    AssessmentAttempt[]
+}
+
+model CourseEnrollment {
+  id          String      @id @default(uuid())
+  userId      String
+  courseId    String
+  classId     String?
+  enrolledAt  DateTime    @default(now())
+  user        User        @relation(fields: [userId], references: [id])
+  course      Course      @relation(fields: [courseId], references: [id])
+  class       StudyClass? @relation(fields: [classId], references: [id])
+  progress    LearningProgress[]
+
+  @@unique([userId, courseId])
+}
+
+model LearningProgress {
+  id             String            @id @default(uuid())
+  userId         String
+  courseId       String?
+  lessonId       String?
+  enrollmentId   String?
+  completed      Boolean           @default(false)
+  percentage     Int               @default(0)
+  lastAccessedAt DateTime          @updatedAt
+  user           User              @relation(fields: [userId], references: [id])
+  enrollment     CourseEnrollment? @relation(fields: [enrollmentId], references: [id])
+
+  @@index([userId, courseId])
+}
+
+model AssessmentAttempt {
+  id          String        @id @default(uuid())
+  userId      String
+  assessmentId String
+  status      AttemptStatus @default(IN_PROGRESS)
+  score       Float?
+  answers     Json?
+  submittedAt DateTime?
+  createdAt   DateTime      @default(now())
+  user        User          @relation(fields: [userId], references: [id])
+  assessment  Assessment    @relation(fields: [assessmentId], references: [id])
+}
+
+model Subscription {
+  id          String               @id @default(uuid())
+  userId      String
+  planName    String
+  status      SubscriptionStatus   @default(FREE)
+  startedAt   DateTime             @default(now())
+  endsAt      DateTime?
+  payments    Payment[]
+  user        User                 @relation(fields: [userId], references: [id])
+}
+
+model Payment {
+  id            String       @id @default(uuid())
+  subscriptionId String
+  amount        Decimal
+  currency      String       @default("INR")
+  provider      String
+  status        PaymentStatus @default(PENDING)
+  createdAt     DateTime     @default(now())
+  subscription  Subscription @relation(fields: [subscriptionId], references: [id])
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  title     String
+  body      String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model AuditLog {
+  id         String   @id @default(uuid())
+  userId     String?
+  entityType String
+  entityId   String
+  action     String
+  meta       Json?
+  createdAt  DateTime @default(now())
+  user       User?    @relation(fields: [userId], references: [id])
+}
+
+model ParentChildLink {
+  id       String @id @default(uuid())
+  parentId String
+  childId  String
+  parent   User   @relation("ParentLinks", fields: [parentId], references: [id])
+  child    User   @relation("ChildLinks", fields: [childId], references: [id])
+
+  @@unique([parentId, childId])
+}

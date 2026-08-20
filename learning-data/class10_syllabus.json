@@ -1,0 +1,1535 @@
+{
+  "class": 10,
+  "board": ["CBSE", "NCERT"],
+  "subjects": [
+    {
+      "name": "Mathematics",
+      "chapters": [
+        {
+          "name": "Real Numbers",
+          "topics": [
+            "Euclid's Division Lemma",
+            "Euclid's Division Algorithm",
+            "Fundamental Theorem of Arithmetic",
+            "Irrational Numbers",
+            "Rational Numbers and Decimal Expansions",
+            "HCF and LCM applications"
+          ],
+          "important_points": [
+            "Every composite number can be uniquely expressed as a product of primes.",
+            "If a rational number has a terminating decimal expansion, its denominator in lowest terms has only 2 and/or 5 as prime factors.",
+            "Decimal expansion of an irrational number is non-terminating and non-repeating."
+          ],
+          "formulas": [
+            "HCF(a, b) × LCM(a, b) = a × b",
+            "Dividend = Divisor × Quotient + Remainder"
+          ],
+          "diagrams": [
+            "Standard number line representation of rational and irrational numbers",
+            "Division algorithm flow diagram"
+          ],
+          "exam_focus": [
+            "Proof-based questions on irrationality",
+            "Finding HCF and LCM using Euclid's algorithm",
+            "Classifying decimal expansions"
+          ],
+          "important_questions": [
+            "Use Euclid's division lemma to find HCF of two numbers.",
+            "Prove that sqrt(2) is irrational.",
+            "Find the decimal expansion of a rational number and state whether it is terminating or non-terminating recurring."
+          ],
+          "mcq_topics": [
+            "Prime factorization",
+            "Rational vs irrational numbers",
+            "Terminating decimal condition",
+            "HCF and LCM"
+          ]
+        },
+        {
+          "name": "Polynomials",
+          "topics": [
+            "Zeroes of a polynomial",
+            "Geometrical meaning of zeroes",
+            "Relationship between zeroes and coefficients",
+            "Division algorithm for polynomials",
+            "Graphs of quadratic and cubic polynomials"
+          ],
+          "important_points": [
+            "A polynomial of degree n can have at most n zeroes.",
+            "For ax^2 + bx + c, sum of zeroes = -b/a and product = c/a.",
+            "Zeroes are the x-coordinates where the graph intersects the x-axis."
+          ],
+          "formulas": [
+            "For quadratic polynomial ax^2 + bx + c: Sum = -b/a, Product = c/a",
+            "If α and β are zeroes, p(x) = k(x - α)(x - β)"
+          ],
+          "diagrams": [
+            "Graph of a quadratic polynomial showing parabola and x-intercepts",
+            "Illustration of zeroes on Cartesian plane"
+          ],
+          "exam_focus": [
+            "Finding zeroes by factorization",
+            "Using relation between zeroes and coefficients",
+            "Graph interpretation"
+          ],
+          "important_questions": [
+            "Find zeroes of a polynomial and verify the relationship with coefficients.",
+            "Divide a polynomial by a linear polynomial and verify the division algorithm.",
+            "Draw the graph of a quadratic polynomial and identify zeroes."
+          ],
+          "mcq_topics": [
+            "Zeroes of polynomial",
+            "Graphical representation",
+            "Coefficient relationships",
+            "Division algorithm"
+          ]
+        },
+        {
+          "name": "Pair of Linear Equations in Two Variables",
+          "topics": [
+            "Graphical method",
+            "Algebraic methods: substitution, elimination, cross-multiplication",
+            "Consistency of equations",
+            "Applications in daily life"
+          ],
+          "important_points": [
+            "A pair of linear equations can have no solution, unique solution, or infinitely many solutions.",
+            "Graphically, the solution is the intersection point of lines."
+          ],
+          "formulas": [
+            "Standard form: a1x + b1y + c1 = 0 and a2x + b2y + c2 = 0",
+            "Condition for consistency: a1/a2 ≠ b1/b2 (unique), a1/a2 = b1/b2 ≠ c1/c2 (no solution), a1/a2 = b1/b2 = c1/c2 (infinitely many)"
+          ],
+          "diagrams": [
+            "Graph of two intersecting lines",
+            "Parallel and coincident lines"
+          ],
+          "exam_focus": [
+            "Solving by substitution/elimination",
+            "Checking consistency",
+            "Word problems"
+          ],
+          "important_questions": [
+            "Solve a pair of equations using elimination method.",
+            "Find whether the system is consistent or inconsistent.",
+            "Solve a word problem based on age, cost, or distance."
+          ],
+          "mcq_topics": [
+            "Graphical interpretation",
+            "Consistency conditions",
+            "Substitution method",
+            "Word problems"
+          ]
+        },
+        {
+          "name": "Quadratic Equations",
+          "topics": [
+            "Standard form of quadratic equation",
+            "Factorization method",
+            "Completing square method",
+            "Quadratic formula",
+            "Discriminant and nature of roots",
+            "Applications"
+          ],
+          "important_points": [
+            "A quadratic equation has degree 2.",
+            "Discriminant D = b^2 - 4ac determines the nature of roots.",
+            "If D > 0, two distinct real roots; D = 0, equal roots; D < 0, no real roots."
+          ],
+          "formulas": [
+            "Quadratic formula: x = [-b ± sqrt(b^2 - 4ac)] / 2a",
+            "Discriminant: D = b^2 - 4ac"
+          ],
+          "diagrams": [
+            "Parabola for positive and negative roots",
+            "Graph of y = ax^2 + bx + c"
+          ],
+          "exam_focus": [
+            "Solving by factorization and formula",
+            "Nature of roots",
+            "Real-life quadratic word problems"
+          ],
+          "important_questions": [
+            "Solve a quadratic equation by factorization.",
+            "Find the roots using quadratic formula.",
+            "Determine the nature of roots based on discriminant."
+          ],
+          "mcq_topics": [
+            "Quadratic formula",
+            "Discriminant",
+            "Roots and zeros",
+            "Applications"
+          ]
+        },
+        {
+          "name": "Arithmetic Progressions",
+          "topics": [
+            "Sequence and series",
+            "nth term of AP",
+            "Sum of first n terms",
+            "Applications of AP"
+          ],
+          "important_points": [
+            "Common difference is constant across consecutive terms.",
+            "nth term a_n = a + (n-1)d",
+            "Sum S_n = n/2 [2a + (n-1)d]"
+          ],
+          "formulas": [
+            "a_n = a + (n-1)d",
+            "S_n = n/2 [2a + (n-1)d] = n/2 (a + l)"
+          ],
+          "diagrams": [
+            "Pattern of arithmetic sequence on number line",
+            "Representation of AP terms"
+          ],
+          "exam_focus": [
+            "Finding nth term",
+            "Sum of terms",
+            "Word problems on AP"
+          ],
+          "important_questions": [
+            "Find the 25th term of an AP.",
+            "Find sum of first n terms.",
+            "Identify whether a sequence is an AP."
+          ],
+          "mcq_topics": [
+            "AP terms",
+            "Common difference",
+            "Sum formulas",
+            "Sequence recognition"
+          ]
+        },
+        {
+          "name": "Triangles",
+          "topics": [
+            "Similar figures",
+            "Similarity of triangles",
+            "BPT theorem",
+            "Criteria for similarity",
+            "Areas of similar triangles",
+            "Pythagoras theorem"
+          ],
+          "important_points": [
+            "If two triangles are similar, their corresponding angles are equal and corresponding sides are proportional.",
+            "Basic proportionality theorem is useful for solving geometric ratios."
+          ],
+          "formulas": [
+            "For similar triangles: AB/DE = BC/EF = AC/DF",
+            "Pythagoras theorem: a^2 + b^2 = c^2"
+          ],
+          "diagrams": [
+            "Two similar triangles with corresponding sides marked",
+            "Right triangle with altitude and theorem application"
+          ],
+          "exam_focus": [
+            "Proving triangles similar",
+            "Using BPT",
+            "Area ratio properties"
+          ],
+          "important_questions": [
+            "Prove that two triangles are similar.",
+            "Use theorem to find unknown sides.",
+            "Apply area ratio in similar triangles."
+          ],
+          "mcq_topics": [
+            "BPT theorem",
+            "Similarity criteria",
+            "Pythagoras theorem",
+            "Area relations"
+          ]
+        },
+        {
+          "name": "Coordinate Geometry",
+          "topics": [
+            "Distance formula",
+            "Section formula",
+            "Midpoint formula",
+            "Area of triangle",
+            "Coordinate plane basics"
+          ],
+          "important_points": [
+            "Coordinates describe positions on plane.",
+            "Distance between two points can be computed using coordinates."
+          ],
+          "formulas": [
+            "Distance: sqrt((x2-x1)^2 + (y2-y1)^2)",
+            "Midpoint: ((x1+x2)/2, (y1+y2)/2)",
+            "Section formula: ((m x2 + n x1)/(m+n), (m y2 + n y1)/(m+n))"
+          ],
+          "diagrams": [
+            "Coordinate axes and quadrants",
+            "Plotting points and line segments"
+          ],
+          "exam_focus": [
+            "Finding distance between points",
+            "Finding coordinates of midpoint",
+            "Area of triangle using coordinates"
+          ],
+          "important_questions": [
+            "Find the distance between two given points.",
+            "Find the midpoint of a segment.",
+            "Find the area of triangle formed by three points."
+          ],
+          "mcq_topics": [
+            "Distance formula",
+            "Midpoint formula",
+            "Coordinate axes",
+            "Section formula"
+          ]
+        },
+        {
+          "name": "Introduction to Trigonometry",
+          "topics": [
+            "Trigonometric ratios",
+            "Values of trigonometric ratios for standard angles",
+            "Complementary angles",
+            "Trigonometric identities",
+            "Applications in height and distance"
+          ],
+          "important_points": [
+            "In a right triangle, trigonometric ratios relate angle to side lengths.",
+            "sin^2 θ + cos^2 θ = 1 is a fundamental identity."
+          ],
+          "formulas": [
+            "sin θ = opposite/hypotenuse",
+            "cos θ = adjacent/hypotenuse",
+            "tan θ = opposite/adjacent",
+            "sin^2 θ + cos^2 θ = 1"
+          ],
+          "diagrams": [
+            "Right triangle with labelled sides",
+            "Height and distance diagram"
+          ],
+          "exam_focus": [
+            "Using standard angle values",
+            "Problems on heights and distances",
+            "Identity applications"
+          ],
+          "important_questions": [
+            "Find sin, cos, tan values for a given angle.",
+            "Solve a height-and-distance problem.",
+            "Prove a trigonometric identity."
+          ],
+          "mcq_topics": [
+            "Trigonometric ratios",
+            "Standard angles",
+            "Complementary angle relations",
+            "Identities"
+          ]
+        },
+        {
+          "name": "Circles",
+          "topics": [
+            "Tangent to a circle",
+            "Number of tangents from a point",
+            "Properties of tangents",
+            "Theorems related to circles"
+          ],
+          "important_points": [
+            "A tangent is perpendicular to the radius at the point of contact.",
+            "Two tangents drawn from an external point are equal in length."
+          ],
+          "formulas": [
+            "Radius ⟂ tangent at point of contact",
+            "Tangents from external point are equal"
+          ],
+          "diagrams": [
+            "Circle with radius and tangent",
+            "Two tangents from an external point"
+          ],
+          "exam_focus": [
+            "Proving tangent properties",
+            "Using equal tangent lengths",
+            "Circle theorem applications"
+          ],
+          "important_questions": [
+            "Prove that radius is perpendicular to tangent.",
+            "Find the length of tangent from an external point.",
+            "Solve a geometry problem using circle theorems."
+          ],
+          "mcq_topics": [
+            "Tangents",
+            "Circle theorems",
+            "Radius-tangent relation",
+            "External point properties"
+          ]
+        },
+        {
+          "name": "Areas Related to Circles",
+          "topics": [
+            "Perimeter and area of a circle",
+            "Sector and segment",
+            "Areas of combinations of plane figures",
+            "Applications of sectors"
+          ],
+          "important_points": [
+            "Arc length and area of sector are based on angle subtended at the center.",
+            "Area of sector = (θ/360) × πr^2"
+          ],
+          "formulas": [
+            "Circumference = 2πr",
+            "Area = πr^2",
+            "Area of sector = (θ/360) × πr^2",
+            "Length of arc = (θ/360) × 2πr"
+          ],
+          "diagrams": [
+            "Circle with sector and segment shaded",
+            "Combined figure of semicircle and rectangle"
+          ],
+          "exam_focus": [
+            "Finding area of shaded region",
+            "Arc length and sector area",
+            "Combining figures"
+          ],
+          "important_questions": [
+            "Find area of a sector from radius and angle.",
+            "Calculate area of a shaded region made of sectors and rectangles.",
+            "Find perimeter of combined shapes."
+          ],
+          "mcq_topics": [
+            "Sector area",
+            "Arc length",
+            "Area of circle",
+            "Shaded region"
+          ]
+        },
+        {
+          "name": "Surface Areas and Volumes",
+          "topics": [
+            "Cube, cuboid, cylinder, cone, sphere, hemisphere",
+            "Surface area formulas",
+            "Volume formulas",
+            "Combination solids",
+            "Conversion of solids"
+          ],
+          "important_points": [
+            "Surface area of 3D figures measures outside covering. Volume measures space occupied.",
+            "Applications include packaging, storage, and construction problems."
+          ],
+          "formulas": [
+            "Cuboid: SA = 2(lb + bh + hl), V = lbh",
+            "Cylinder: CSA = 2πrh, TSA = 2πr(r+h), V = πr^2h",
+            "Cone: CSA = πrl, TSA = πr(r+l), V = (1/3)πr^2h",
+            "Sphere: SA = 4πr^2, V = (4/3)πr^3"
+          ],
+          "diagrams": [
+            "3D shapes with labelled dimensions",
+            "Combination-solid diagrams"
+          ],
+          "exam_focus": [
+            "Formula recall",
+            "Combined solid calculations",
+            "Conversion of one solid to another"
+          ],
+          "important_questions": [
+            "Find surface area of a cylinder or cone.",
+            "Calculate volume of a sphere or hemisphere.",
+            "Solve problems with melting and reshaping solids."
+          ],
+          "mcq_topics": [
+            "Formulas of SA and V",
+            "Conversion of solids",
+            "Combined shapes",
+            "Cuboid-cylinder-cone relation"
+          ]
+        },
+        {
+          "name": "Statistics",
+          "topics": [
+            "Mean, median, mode",
+            "Grouped and ungrouped data",
+            "Cumulative frequency",
+            "Median class and modal class",
+            "Graphical representation"
+          ],
+          "important_points": [
+            "Median and mode help summarize data.",
+            "For grouped data, class intervals and frequency are essential."
+          ],
+          "formulas": [
+            "Mean = sum of values / number of values",
+            "Median for grouped data = l + ((n/2 - cf)/f) × h",
+            "Mode = l + ((f1 - f0)/(2f1 - f0 - f2)) × h"
+          ],
+          "diagrams": [
+            "Histogram",
+            "Cumulative frequency curve (ogive)"
+          ],
+          "exam_focus": [
+            "Finding mean, median, mode",
+            "Reading cumulative frequency tables",
+            "Comparison of datasets"
+          ],
+          "important_questions": [
+            "Find mean, median, and mode of grouped data.",
+            "Draw an ogive and estimate median.",
+            "Interpretation of class intervals."
+          ],
+          "mcq_topics": [
+            "Mean",
+            "Median",
+            "Mode",
+            "Ogive"
+          ]
+        },
+        {
+          "name": "Probability",
+          "topics": [
+            "Experimental probability",
+            "Theoretical probability",
+            "Complementary events",
+            "Single-event and multiple-event problems"
+          ],
+          "important_points": [
+            "Probability of an event lies between 0 and 1.",
+            "P(E) + P(not E) = 1."
+          ],
+          "formulas": [
+            "P(E) = Number of favourable outcomes / Total number of outcomes",
+            "P(not E) = 1 - P(E)"
+          ],
+          "diagrams": [
+            "Probability scale from 0 to 1",
+            "Sample space diagram"
+          ],
+          "exam_focus": [
+            "Basic probability calculations",
+            "Complementary events",
+            "Dice, coin, and card problems"
+          ],
+          "important_questions": [
+            "Find probability of head/tail in a coin toss.",
+            "Find probability of drawing a card or a ball of a given color.",
+            "Solve complementary probability questions."
+          ],
+          "mcq_topics": [
+            "Experimental vs theoretical probability",
+            "Sample space",
+            "Dice and cards",
+            "Complementary events"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "subjects": [
+        {
+          "name": "Physics",
+          "chapters": [
+            {
+              "name": "Light - Reflection and Refraction",
+              "topics": [
+                "Laws of reflection",
+                "Image formation by plane mirrors",
+                "Spherical mirrors",
+                "Mirror formula and magnification",
+                "Refraction through glass slab",
+                "Lenses and lens formula",
+                "Ray diagrams"
+              ],
+              "important_points": [
+                "Angle of incidence equals angle of reflection.",
+                "The image formed by a plane mirror is virtual, erect, and laterally inverted.",
+                "For lenses, the sign convention follows Cartesian rules."
+              ],
+              "formulas": [
+                "Mirror formula: 1/f = 1/v + 1/u",
+                "Magnification: m = h_i/h_o = -v/u",
+                "Lens formula: 1/f = 1/v - 1/u"
+              ],
+              "diagrams": [
+                "Ray diagram for concave and convex mirrors",
+                "Ray diagrams for convex and concave lenses"
+              ],
+              "exam_focus": [
+                "Ray diagrams",
+                "Mirror and lens formula calculations",
+                "Nature and position of images"
+              ],
+              "important_questions": [
+                "Draw ray diagram for image formation by a concave mirror.",
+                "Calculate focal length and magnification using mirror formula.",
+                "Explain refraction through a rectangular glass slab."
+              ],
+              "mcq_topics": [
+                "Reflection laws",
+                "Mirror formula",
+                "Lens formula",
+                "Image formation"
+              ]
+            },
+            {
+              "name": "The Human Eye and the Colourful World",
+              "topics": [
+                "Structure of human eye",
+                "Power of accommodation",
+                "Defects of vision and correction",
+                "Dispersion of light",
+                "Atmospheric refraction",
+                "Scattering of light"
+              ],
+              "important_points": [
+                "The eye lens changes shape to focus objects at different distances.",
+                "Myopia, hypermetropia, and presbyopia are common defects.",
+                "Rainbows are caused by dispersion and internal reflection."
+              ],
+              "formulas": [
+                "Power of lens: P = 1/f (in metres)",
+                "Power measured in dioptre"
+              ],
+              "diagrams": [
+                "Human eye labelled diagram",
+                "Dispersion of white light by prism"
+              ],
+              "exam_focus": [
+                "Eye defects and their correction",
+                "Diagram of eye",
+                "Atmospheric refraction and scattering"
+              ],
+              "important_questions": [
+                "Define power of accommodation.",
+                "Explain myopia and its correction.",
+                "Describe the phenomenon of rainbow formation."
+              ],
+              "mcq_topics": [
+                "Human eye",
+                "Defects of vision",
+                "Dispersion",
+                "Scattering"
+              ]
+            },
+            {
+              "name": "Electricity",
+              "topics": [
+                "Electric current and potential difference",
+                "Ohm's law",
+                "Resistance and resistivity",
+                "Series and parallel circuits",
+                "Heating effect of current",
+                "Electric power and energy"
+              ],
+              "important_points": [
+                "Current is the rate of flow of charge.",
+                "V = IR is the basic relation of Ohm's law."
+              ],
+              "formulas": [
+                "V = IR",
+                "R = ρL/A",
+                "H = I^2Rt",
+                "P = VI = I^2R = V^2/R"
+              ],
+              "diagrams": [
+                "Simple electric circuit",
+                "Series and parallel circuits"
+              ],
+              "exam_focus": [
+                "Ohm's law and resistance",
+                "Circuit combinations",
+                "Power and heating effect"
+              ],
+              "important_questions": [
+                "Calculate resistance in series or parallel combination.",
+                "Verify Ohm's law experimentally.",
+                "Find electric power consumed by a device."
+              ],
+              "mcq_topics": [
+                "Ohm's law",
+                "Resistance",
+                "Electric power",
+                "Series-parallel circuits"
+              ]
+            },
+            {
+              "name": "Magnetic Effects of Electric Current",
+              "topics": [
+                "Magnetic field and field lines",
+                "Right-hand thumb rule",
+                "Magnetic field due to current-carrying conductor",
+                "Force on current-carrying conductor",
+                "Electric motor and generator",
+                "Domestic electric circuits"
+              ],
+              "important_points": [
+                "A current-carrying conductor creates a magnetic field around it.",
+                "Electric motor converts electrical energy to mechanical energy.",
+                "Domestic circuits use fuse for safety."
+              ],
+              "formulas": [
+                "Force on conductor: F = BIL sin θ",
+                "Power transmission and safety devices" 
+              ],
+              "diagrams": [
+                "Magnetic field lines around a straight conductor and circular loop",
+                "Electric motor diagram"
+              ],
+              "exam_focus": [
+                "Right-hand rule",
+                "Motor and generator basics",
+                "Magnetic field patterns"
+              ],
+              "important_questions": [
+                "Describe magnetic field due to a straight conductor.",
+                "Explain the working of an electric motor.",
+                "Why is a fuse used in domestic circuits?"
+              ],
+              "mcq_topics": [
+                "Magnetic field lines",
+                "Current-carrying conductor",
+                "Electric motor",
+                "Fuse"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Chemistry",
+          "chapters": [
+            {
+              "name": "Chemical Reactions and Equations",
+              "topics": [
+                "Types of chemical reactions",
+                "Balancing equations",
+                "Oxidation and reduction",
+                "Corrosion and rancidity"
+              ],
+              "important_points": [
+                "Chemical reactions involve rearrangement of atoms.",
+                "Balanced equations obey the law of conservation of mass."
+              ],
+              "formulas": [
+                "Mass of reactants = mass of products"
+              ],
+              "diagrams": [
+                "Reaction setup diagrams",
+                "Rusting illustration"
+              ],
+              "exam_focus": [
+                "Balancing equations",
+                "Reaction types",
+                "Redox concepts"
+              ],
+              "important_questions": [
+                "Balance a chemical equation.",
+                "Classify a reaction as combination, decomposition, displacement, or double displacement.",
+                "Explain corrosion and rancidity with examples."
+              ],
+              "mcq_topics": [
+                "Reaction types",
+                "Balancing equations",
+                "Oxidation-reduction",
+                "Corrosion"
+              ]
+            },
+            {
+              "name": "Acids, Bases and Salts",
+              "topics": [
+                "Properties of acids and bases",
+                "pH scale",
+                "Neutralization",
+                "Salts and their uses",
+                "Indicators"
+              ],
+              "important_points": [
+                "Acids produce H+ ions in solution; bases produce OH- ions.",
+                "pH below 7 is acidic, above 7 is basic, and 7 is neutral."
+              ],
+              "formulas": [
+                "pH = -log[H+]",
+                "Acid + Base → Salt + Water"
+              ],
+              "diagrams": [
+                "pH scale",
+                "Neutralization reaction setup"
+              ],
+              "exam_focus": [
+                "pH and indicators",
+                "Reaction of acids and bases",
+                "Uses of salts"
+              ],
+              "important_questions": [
+                "Define pH and explain its role in daily life.",
+                "Explain the neutralisation process.",
+                "List properties of acids and bases."
+              ],
+              "mcq_topics": [
+                "pH scale",
+                "Indicators",
+                "Neutralization",
+                "Salts"
+              ]
+            },
+            {
+              "name": "Metals and Non-metals",
+              "topics": [
+                "Physical properties of metals and non-metals",
+                "Chemical properties",
+                "Reactivity series",
+                "Corrosion and extraction basics"
+              ],
+              "important_points": [
+                "Metals are generally malleable, ductile, and good conductors.",
+                "Non-metals are brittle and poor conductors of heat and electricity."
+              ],
+              "formulas": [
+                "Reactivity series order is used for displacement reactions"
+              ],
+              "diagrams": [
+                "Reactivity series chart",
+                "Copper and iron reaction illustration"
+              ],
+              "exam_focus": [
+                "Physical and chemical properties",
+                "Reactivity series",
+                "Uses of metals and non-metals"
+              ],
+              "important_questions": [
+                "Compare properties of metals and non-metals.",
+                "Explain why iron gets rusted.",
+                "Write equations for displacement reactions."
+              ],
+              "mcq_topics": [
+                "Metals and non-metals",
+                "Reactivity series",
+                "Corrosion",
+                "Displacement reactions"
+              ]
+            },
+            {
+              "name": "Carbon and Its Compounds",
+              "topics": [
+                "Covalent bonding",
+                "Homologous series",
+                "Functional groups",
+                "Ethanol and ethanoic acid",
+                "Soaps and detergents"
+              ],
+              "important_points": [
+                "Carbon can form long chains due to catenation.",
+                "Organic compounds show homologous series with similar chemical properties."
+              ],
+              "formulas": [
+                "General formula for alkanes: C_nH_{2n+2}",
+                "General formula for alkenes: C_nH_{2n}"
+              ],
+              "diagrams": [
+                "Structural formulas of methane, ethane, ethene",
+                "Soap molecule structure"
+              ],
+              "exam_focus": [
+                "Covalent bonds",
+                "Homologous series",
+                "Chemical properties of ethanol and ethanoic acid"
+              ],
+              "important_questions": [
+                "Explain why carbon forms a large number of compounds.",
+                "Write structures and names of first few alkanes.",
+                "Differentiate between soaps and detergents."
+              ],
+              "mcq_topics": [
+                "Catenation",
+                "Homologous series",
+                "Functional groups",
+                "Soaps and detergents"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Biology",
+          "chapters": [
+            {
+              "name": "Life Processes",
+              "topics": [
+                "Nutrition",
+                "Respiration",
+                "Transportation",
+                "Excretion",
+                "Photosynthesis",
+                "Human digestive and circulatory systems"
+              ],
+              "important_points": [
+                "Life processes are necessary to maintain life.",
+                "Plants and animals use different methods of nutrition and transport."
+              ],
+              "formulas": [
+                "No major numerical formulas, but concepts like ATP production and diffusion are important"
+              ],
+              "diagrams": [
+                "Digestive system diagram",
+                "Human heart and circulatory system"
+              ],
+              "exam_focus": [
+                "Digestive and respiratory systems",
+                "Circulation and excretion",
+                "Plant transport"
+              ],
+              "important_questions": [
+                "Explain the process of digestion in humans.",
+                "Describe blood circulation in humans.",
+                "Differentiate between autotrophic and heterotrophic nutrition."
+              ],
+              "mcq_topics": [
+                "Nutrition",
+                "Respiration",
+                "Transportation",
+                "Excretion"
+              ]
+            },
+            {
+              "name": "Control and Coordination",
+              "topics": [
+                "Nervous system",
+                "Reflex action",
+                "Plant hormones",
+                "Endocrine system",
+                "Human brain and spinal cord"
+              ],
+              "important_points": [
+                "Nervous system coordinates voluntary and involuntary actions.",
+                "Hormones regulate growth, development, and metabolism."
+              ],
+              "diagrams": [
+                "Neuron diagram",
+                "Human brain labelled diagram"
+              ],
+              "exam_focus": [
+                "Neuron structure",
+                "Reflex arc",
+                "Plant hormones"
+              ],
+              "important_questions": [
+                "Describe the structure of a neuron.",
+                "Explain reflex action with diagram.",
+                "State the functions of hormones in plants and animals."
+              ],
+              "mcq_topics": [
+                "Neuron",
+                "Reflex arc",
+                "Hormones",
+                "Brain"
+              ]
+            },
+            {
+              "name": "How do Organisms Reproduce?",
+              "topics": [
+                "Asexual reproduction",
+                "Sexual reproduction in plants",
+                "Human reproductive system",
+                "Menstrual cycle",
+                "Reproductive health"
+              ],
+              "important_points": [
+                "Reproduction ensures continuity of species.",
+                "Sexual reproduction introduces variation."
+              ],
+              "diagrams": [
+                "Flower structure",
+                "Human reproductive system"
+              ],
+              "exam_focus": [
+                "Asexual vs sexual reproduction",
+                "Reproductive health",
+                "Male and female reproductive organs"
+              ],
+              "important_questions": [
+                "Explain asexual reproduction in plants.",
+                "Draw labeled diagram of human reproductive system.",
+                "Discuss the importance of reproductive health."
+              ],
+              "mcq_topics": [
+                "Modes of reproduction",
+                "Flower parts",
+                "Reproductive health",
+                "Menstrual cycle"
+              ]
+            },
+            {
+              "name": "Heredity and Evolution",
+              "topics": [
+                "Mendel's experiments",
+                "Inheritance of traits",
+                "Variation and evolution",
+                "Speciation",
+                "Evolutionary relationships"
+              ],
+              "important_points": [
+                "Genes carry hereditary information.",
+                "Natural selection leads to evolution over generations."
+              ],
+              "diagrams": [
+                "Punnett square",
+                "Evolutionary tree"
+              ],
+              "exam_focus": [
+                "Mendelian inheritance",
+                "Dominant and recessive traits",
+                "Evolutionary concepts"
+              ],
+              "important_questions": [
+                "Explain Mendel's law of segregation.",
+                "How do new species arise?",
+                "Differentiate between acquired and inherited traits."
+              ],
+              "mcq_topics": [
+                "Genes",
+                "Mendelian laws",
+                "Evolution",
+                "Variation"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Social Science",
+      "subjects": [
+        {
+          "name": "History",
+          "chapters": [
+            {
+              "name": "Rise of Nationalism in Europe",
+              "topics": [
+                "French Revolution",
+                "Nationalism and nation-state",
+                "Unification of Italy and Germany",
+                "Liberalism and conservatism"
+              ],
+              "important_points": [
+                "Nationalism emerged as a powerful force in Europe in the nineteenth century.",
+                "Nation-states were shaped by language, culture, and political identity."
+              ],
+              "important_questions": [
+                "How did the French Revolution create a sense of nationalism?",
+                "Explain the role of Giuseppe Mazzini, Cavour, and Garibaldi."
+              ],
+              "mcq_topics": [
+                "French Revolution",
+                "Nationalism",
+                "Unification of Italy and Germany"
+              ]
+            },
+            {
+              "name": "Nationalism in India",
+              "topics": [
+                "Non-Cooperation Movement",
+                "Civil Disobedience Movement",
+                "Satyagraha",
+                "Gandhi's role",
+                "Partition and independence"
+              ],
+              "important_points": [
+                "Mass movement mobilized people across class and region.",
+                "The freedom struggle combined political, social, and economic demands."
+              ],
+              "important_questions": [
+                "Why did the Non-Cooperation Movement gain mass support?",
+                "Discuss the significance of Salt Satyagraha."
+              ],
+              "mcq_topics": [
+                "Gandhi",
+                "Civil Disobedience",
+                "Non-Cooperation",
+                "Freedom struggle"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Geography",
+          "chapters": [
+            {
+              "name": "Resources and Development",
+              "topics": [
+                "Types of resources",
+                "Resource planning",
+                "Land resources",
+                "Soil and conservation"
+              ],
+              "important_points": [
+                "Sustainable development is essential for resource management.",
+                "Planning and conservation are key to using resources efficiently."
+              ],
+              "important_questions": [
+                "Differentiate between renewable and non-renewable resources.",
+                "Suggest measures for resource conservation."
+              ],
+              "mcq_topics": [
+                "Resource use",
+                "Sustainable development",
+                "Soil conservation"
+              ]
+            },
+            {
+              "name": "Agriculture",
+              "topics": [
+                "Types of farming",
+                "Crops and seasons",
+                "Major agricultural crops",
+                "Technological and institutional reforms"
+              ],
+              "important_points": [
+                "Agriculture is the mainstay of Indian economy.",
+                "Climate, rainfall, and soil determine crop patterns."
+              ],
+              "important_questions": [
+                "Distinguish between kharif and rabi crops.",
+                "Explain the importance of irrigation in agriculture."
+              ],
+              "mcq_topics": [
+                "Types of farming",
+                "Crops",
+                "Agricultural reforms"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Political Science",
+          "chapters": [
+            {
+              "name": "Power Sharing and Federalism",
+              "topics": [
+                "Forms of power sharing",
+                "Federalism in India",
+                "Division of powers",
+                "Decentralization"
+              ],
+              "important_points": [
+                "Power sharing prevents the concentration of authority.",
+                "Federalism balances unity and diversity in a country."
+              ],
+              "important_questions": [
+                "Why is power sharing necessary in democracy?",
+                "Explain the features of Indian federalism."
+              ],
+              "mcq_topics": [
+                "Federalism",
+                "Power sharing",
+                "Decentralization"
+              ]
+            },
+            {
+              "name": "Gender, Religion and Caste",
+              "topics": [
+                "Social divisions",
+                "Democracy and equality",
+                "Importance of participation"
+              ],
+              "important_points": [
+                "Social divisions can be a challenge to democratic politics.",
+                "Inclusion and equality are essential for justice."
+              ],
+              "important_questions": [
+                "How does caste affect politics in India?",
+                "Why is gender equality important in democracy?"
+              ],
+              "mcq_topics": [
+                "Gender equality",
+                "Caste in politics",
+                "Religion and democracy"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Economics",
+          "chapters": [
+            {
+              "name": "Development",
+              "topics": [
+                "Income and growth",
+                "Human development index",
+                "Sustainability and overall development"
+              ],
+              "important_points": [
+                "Development is not just about income; it includes security and opportunities."
+              ],
+              "important_questions": [
+                "What are the different criteria of development?",
+                "How is HDI calculated?"
+              ],
+              "mcq_topics": [
+                "Development indicators",
+                "Income",
+                "HDI"
+              ]
+            },
+            {
+              "name": "Money and Credit",
+              "topics": [
+                "Money as medium of exchange",
+                "Formal and informal credit",
+                "Banks and loans",
+                "Role of SHGs"
+              ],
+              "important_points": [
+                "Banks provide formal credit opportunities.",
+                "Access to credit is essential for economic development."
+              ],
+              "important_questions": [
+                "Differentiate between formal and informal credit sources.",
+                "How do banks play a role in economic development?"
+              ],
+              "mcq_topics": [
+                "Banks",
+                "Loans",
+                "Formal and informal credit"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "English",
+      "chapters": [
+        {
+          "name": "Reading Skills",
+          "topics": [
+            "Unseen passages",
+            "Comprehension strategies",
+            "Inference and vocabulary in context",
+            "Summary writing"
+          ],
+          "important_points": [
+            "Read for main idea, tone, and intent.",
+            "Answer questions using evidence from the passage."
+          ],
+          "important_questions": [
+            "Read a factual or literary passage and answer questions.",
+            "Write a short summary in your own words."
+          ],
+          "mcq_topics": [
+            "Reading comprehension",
+            "Inference",
+            "Vocabulary"
+          ]
+        },
+        {
+          "name": "Writing Skills",
+          "topics": [
+            "Formal letter",
+            "Analytical paragraph",
+            "Article writing",
+            "Notice and message writing"
+          ],
+          "important_points": [
+            "Use correct format, tone, and clarity.",
+            "Structure your answer with introduction, body, and conclusion."
+          ],
+          "important_questions": [
+            "Write a formal letter to the editor.",
+            "Draft an analytical paragraph based on a graph or chart."
+          ],
+          "mcq_topics": [
+            "Format of letters",
+            "Paragraph writing",
+            "Notice writing"
+          ]
+        },
+        {
+          "name": "Grammar",
+          "topics": [
+            "Tenses",
+            "Modals",
+            "Reported speech",
+            "Subject-verb agreement",
+            "Determiners",
+            "Prepositions",
+            "Transformation of sentences"
+          ],
+          "important_points": [
+            "Grammar rules improve accuracy in writing and speaking.",
+            "Sentence transformation is a common exam task."
+          ],
+          "important_questions": [
+            "Convert direct speech into indirect speech.",
+            "Choose the correct tense or modal.",
+            "Identify and correct grammatical errors."
+          ],
+          "mcq_topics": [
+            "Tenses",
+            "Reported speech",
+            "Prepositions",
+            "Subject-verb agreement"
+          ]
+        },
+        {
+          "name": "Literature",
+          "topics": [
+            "First Flight prose and poetry",
+            "Footprints Without Feet",
+            "Theme, character, and poetic devices",
+            "Value-based questions"
+          ],
+          "important_points": [
+            "Focus on central idea, themes, and author intent.",
+            "Support answers with references from the text."
+          ],
+          "important_questions": [
+            "Explain the central idea of a poem or chapter.",
+            "Write a character sketch.",
+            "Answer direct and value-based questions."
+          ],
+          "mcq_topics": [
+            "Theme",
+            "Character analysis",
+            "Poetic devices",
+            "Literary comprehension"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hindi",
+      "chapters": [
+        {
+          "name": "Grammar",
+          "topics": [
+            "वाक्य रचना",
+            "संधि",
+            "समास",
+            "वर्तनी और विराम चिह्न",
+            "मुहावरे",
+            "लोकोक्तियाँ"
+          ],
+          "important_points": [
+            "व्याकरण आधारित प्रश्न भाषा की शुद्धता और अभिव्यक्ति को मज़बूत करते हैं।",
+            "मुहावरे और लोकोक्तियाँ लिखित答 में सुंदरता जोड़ते हैं।"
+          ],
+          "important_questions": [
+            "संधि और समास के उदाहरण लिखिए।",
+            "किसी दिए गए वाक्य की शुद्धि कीजिए।"
+          ],
+          "mcq_topics": [
+            "संधि",
+            "समास",
+            "मुहावरे",
+            "वर्तनी"
+          ]
+        },
+        {
+          "name": "Literature",
+          "topics": [
+            "कविता",
+            "गद्यांश",
+            "कहानी",
+            "पाठ का सार",
+            "व्याख्या एवं भावार्थ"
+          ],
+          "important_points": [
+            "पाठ का मुख्य भाव और संदेश समझना आवश्यक है।",
+            "कविता में भाव, अलंकार और संदेश पर ध्यान दें।"
+          ],
+          "important_questions": [
+            "कविता का भावार्थ लिखिए।",
+            "गद्यांश पर आधारित प्रश्नों के उत्तर दीजिए।"
+          ],
+          "mcq_topics": [
+            "पाठ का सार",
+            "कवि की विचारधारा",
+            "व्याख्या"
+          ]
+        },
+        {
+          "name": "Writing Skills",
+          "topics": [
+            "अनुच्छेद",
+            "पत्र लेखन",
+            "संवाद",
+            "संदेश",
+            "प्रार्थना पत्र"
+          ],
+          "important_questions": [
+            "अनुच्छेद लिखिए।",
+            "पत्र लिखिए तथा उचित प्रारूप का पालन कीजिए।"
+          ],
+          "mcq_topics": [
+            "पत्र लेखन",
+            "अनुच्छेद",
+            "संवाद"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Computer / IT",
+      "chapters": [
+        {
+          "name": "Digital Documentation",
+          "topics": [
+            "Word processing basics",
+            "Formatting text and paragraphs",
+            "Tables, images, and page layout",
+            "Mail merge and templates"
+          ],
+          "important_points": [
+            "Formatting improves readability and presentation.",
+            "Page setup tools help in professional document creation."
+          ],
+          "important_questions": [
+            "Create and format a document.",
+            "Insert table, image, and page border."
+          ],
+          "mcq_topics": [
+            "Formatting tools",
+            "Table insertion",
+            "Layout"
+          ]
+        },
+        {
+          "name": "Spreadsheet",
+          "topics": [
+            "Cell references",
+            "Functions and formulas",
+            "Sorting and filtering",
+            "Charts and graphs",
+            "Data validation"
+          ],
+          "important_points": [
+            "Spreadsheet software is useful for analysis and reporting.",
+            "Functions reduce errors and save time."
+          ],
+          "important_questions": [
+            "Use formulas to calculate marks and totals.",
+            "Create a chart from tabular data."
+          ],
+          "mcq_topics": [
+            "Formulas",
+            "Functions",
+            "Charts",
+            "Cell references"
+          ]
+        },
+        {
+          "name": "Database",
+          "topics": [
+            "Database concepts",
+            "Tables, fields, records",
+            "Primary key and foreign key",
+            "Queries and reports"
+          ],
+          "important_points": [
+            "Databases organize information systematically.",
+            "Queries help retrieve relevant information efficiently."
+          ],
+          "important_questions": [
+            "Create a simple database table.",
+            "Use query filters to retrieve records."
+          ],
+          "mcq_topics": [
+            "Fields and records",
+            "Primary key",
+            "Queries"
+          ]
+        },
+        {
+          "name": "Cyber Security",
+          "topics": [
+            "Internet safety",
+            "Cybercrime and digital ethics",
+            "Strong passwords",
+            "Data privacy and security practices"
+          ],
+          "important_points": [
+            "Cyber safety protects personal information and digital identity.",
+            "Responsible digital behavior is essential."
+          ],
+          "important_questions": [
+            "Explain common cyber threats.",
+            "How can a student protect personal information online?"
+          ],
+          "mcq_topics": [
+            "Password safety",
+            "Cybercrime",
+            "Privacy"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sanskrit / Third Language",
+      "chapters": [
+        {
+          "name": "Language and Grammar",
+          "topics": [
+            "वाच्य",
+            "वाक्य रूप",
+            "धातु रूप",
+            "संस्कृत व्याकरण",
+            "अनुवाद",
+            "पद्यांश"
+          ],
+          "important_points": [
+            "व्याकरण की अच्छी समझ से अनुवाद और पद्य समझने में मदद मिलती है।",
+            "दैनंदिन भाषा विकास के लिए धातु रूप और वाक्य संरचना महत्वपूर्ण हैं।"
+          ],
+          "important_questions": [
+            "धातु रूप लिखिए।",
+            "अनुवाद का अभ्यास कीजिए।"
+          ],
+          "mcq_topics": [
+            "धातु रूप",
+            "वाक्य रूप",
+            "अनुवाद"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Physical Education / Skill Subject",
+      "chapters": [
+        {
+          "name": "Health and Fitness",
+          "topics": [
+            "Physical fitness",
+            "Yoga and wellness",
+            "Balanced diet",
+            "Safety and first aid",
+            "Sports ethics"
+          ],
+          "important_points": [
+            "Healthy lifestyle supports both academic and physical performance.",
+            "Regular exercise and nutrition are essential."
+          ],
+          "important_questions": [
+            "Explain the importance of physical fitness.",
+            "List the benefits of yoga and proper nutrition."
+          ],
+          "mcq_topics": [
+            "Fitness",
+            "Yoga",
+            "Diet",
+            "First aid"
+          ]
+        },
+        {
+          "name": "Skill-Based Modules",
+          "topics": [
+            "Time management",
+            "Teamwork and leadership",
+            "Communication skills",
+            "Digital literacy basics",
+            "Vocational applications"
+          ],
+          "important_points": [
+            "Skills complement academic learning and improve employability.",
+            "Practical training builds confidence and responsibility."
+          ],
+          "important_questions": [
+            "How can communication skills improve teamwork?",
+            "Explain the value of time management in daily life."
+          ],
+          "mcq_topics": [
+            "Communication",
+            "Time management",
+            "Leadership",
+            "Digital literacy"
+          ]
+        }
+      ]
+    }
+  ]
+}

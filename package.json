@@ -1,0 +1,25 @@
+{
+  "name": "studybuddy",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.12.0",
+  "workspaces": [
+    "frontend",
+    "admin",
+    "teacher"
+  ],
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@prisma/client": "^5.19.1",
+    "@types/node": "^20.14.12",
+    "prettier": "^3.3.3",
+    "prisma": "^5.19.1",
+    "turbo": "^2.3.3",
+    "typescript": "^5.5.4"
+  }
+}

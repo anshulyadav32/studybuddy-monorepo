@@ -1,0 +1,113 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: studybuddy-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-studybuddy}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-studybuddy}
+      POSTGRES_DB: ${POSTGRES_DB:-studybuddy}
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-studybuddy} -d ${POSTGRES_DB:-studybuddy}']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: studybuddy-redis
+    restart: unless-stopped
+    ports:
+      - '6379:6379'
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  minio:
+    image: minio/minio:latest
+    container_name: studybuddy-minio
+    restart: unless-stopped
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
+    ports:
+      - '9000:9000'
+      - '9001:9001'
+    command: server /data --console-address ':9001'
+    volumes:
+      - minio_data:/data
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:9000/minio/health/live']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  ngrok:
+    image: ngrok/ngrok:latest
+    container_name: studybuddy-ngrok
+    restart: unless-stopped
+    environment:
+      NGROK_AUTHTOKEN: ${NGROK_AUTHTOKEN:-}
+      NGROK_REGION: ${NGROK_REGION:-us}
+    command:
+      - http
+      - host.docker.internal:3030
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    ports:
+      - '4040:4040'
+    depends_on:
+      - postgres
+      - redis
+      - minio
+
+  gateway:
+    image: golang:1.22
+    container_name: studybuddy-gateway
+    working_dir: /workspace/backend/gateway
+    volumes:
+      - .:/workspace
+    environment:
+      PORT: ${GATEWAY_PORT:-8080}
+      DATABASE_URL: ${DATABASE_URL:-postgresql://studybuddy:studybuddy@postgres:5432/studybuddy?schema=public}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      GOOGLE_OAUTH_REDIRECT_URI: ${GOOGLE_OAUTH_REDIRECT_URI:-}
+    command: sh -c "go mod download && go run ."
+    ports:
+      - '${GATEWAY_PORT:-8080}:8080'
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  core:
+    image: golang:1.22
+    container_name: studybuddy-core
+    working_dir: /workspace/backend/core
+    volumes:
+      - .:/workspace
+    environment:
+      PORT: ${CORE_PORT:-8081}
+      DATABASE_URL: ${DATABASE_URL:-postgresql://studybuddy:studybuddy@postgres:5432/studybuddy?schema=public}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379}
+    command: sh -c "go mod download && go run ."
+    ports:
+      - '${CORE_PORT:-8081}:8081'
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
+  minio_data:
