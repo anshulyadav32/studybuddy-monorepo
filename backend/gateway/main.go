@@ -127,6 +127,11 @@ func proxyTo(w http.ResponseWriter, r *http.Request, targetPath string) {
             req.Header.Add(key, value)
         }
     }
+    if req.Header.Get("Authorization") == "" {
+        if token := tokenFromCookieHeader(r.Header.Get("Cookie")); token != "" {
+            req.Header.Set("Authorization", "Bearer "+token)
+        }
+    }
 
     res, err := http.DefaultClient.Do(req)
     if err != nil {
@@ -144,6 +149,20 @@ func proxyTo(w http.ResponseWriter, r *http.Request, targetPath string) {
     copyHeaders(w, res.Header)
     w.WriteHeader(res.StatusCode)
     _, _ = w.Write(payload)
+}
+
+func tokenFromCookieHeader(cookieHeader string) string {
+    for _, part := range strings.Split(cookieHeader, ";") {
+        segment := strings.TrimSpace(part)
+        if segment == "" {
+            continue
+        }
+        key, value, ok := strings.Cut(segment, "=")
+        if ok && strings.EqualFold(key, "token") {
+            return strings.TrimSpace(value)
+        }
+    }
+    return ""
 }
 
 func copyHeaders(dst http.ResponseWriter, src http.Header) {

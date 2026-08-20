@@ -212,13 +212,12 @@ func handleValidate(w http.ResponseWriter, r *http.Request) {
         return
     }
 
-    tokenString := strings.TrimSpace(r.Header.Get("Authorization"))
-    if tokenString == "" {
-        writeJSON(w, http.StatusUnauthorized, map[string]string{"error": "missing bearer token"})
+    tokenString, err := bearerTokenFromRequest(r)
+    if err != nil {
+        writeJSON(w, http.StatusUnauthorized, map[string]string{"error": err.Error()})
         return
     }
 
-    tokenString = strings.TrimPrefix(tokenString, "Bearer ")
     user, err := validateToken(tokenString)
     if err != nil {
         writeJSON(w, http.StatusUnauthorized, map[string]string{"error": "invalid or expired token"})
@@ -234,13 +233,12 @@ func handleMe(w http.ResponseWriter, r *http.Request) {
         return
     }
 
-    bearer := r.Header.Get("Authorization")
-    if bearer == "" {
-        writeJSON(w, http.StatusUnauthorized, map[string]string{"error": "missing bearer token"})
+    tokenString, err := bearerTokenFromRequest(r)
+    if err != nil {
+        writeJSON(w, http.StatusUnauthorized, map[string]string{"error": err.Error()})
         return
     }
 
-    tokenString := strings.TrimPrefix(bearer, "Bearer ")
     user, err := validateToken(tokenString)
     if err != nil {
         writeJSON(w, http.StatusUnauthorized, map[string]string{"error": "invalid or expired token"})
@@ -256,13 +254,13 @@ func handleUserMe(w http.ResponseWriter, r *http.Request) {
         return
     }
 
-    tokenString := strings.TrimSpace(r.Header.Get("Authorization"))
-    if tokenString == "" {
-        writeJSON(w, http.StatusUnauthorized, map[string]string{"error": "missing bearer token"})
+    tokenString, err := bearerTokenFromRequest(r)
+    if err != nil {
+        writeJSON(w, http.StatusUnauthorized, map[string]string{"error": err.Error()})
         return
     }
 
-    user, err := validateToken(strings.TrimPrefix(tokenString, "Bearer "))
+    user, err := validateToken(tokenString)
     if err != nil {
         writeJSON(w, http.StatusUnauthorized, map[string]string{"error": "invalid or expired token"})
         return
@@ -272,13 +270,13 @@ func handleUserMe(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleUserProfile(w http.ResponseWriter, r *http.Request) {
-    tokenString := strings.TrimSpace(r.Header.Get("Authorization"))
-    if tokenString == "" {
-        writeJSON(w, http.StatusUnauthorized, map[string]string{"error": "missing bearer token"})
+    tokenString, err := bearerTokenFromRequest(r)
+    if err != nil {
+        writeJSON(w, http.StatusUnauthorized, map[string]string{"error": err.Error()})
         return
     }
 
-    user, err := validateToken(strings.TrimPrefix(tokenString, "Bearer "))
+    user, err := validateToken(tokenString)
     if err != nil {
         writeJSON(w, http.StatusUnauthorized, map[string]string{"error": "invalid or expired token"})
         return
@@ -523,6 +521,22 @@ func validateToken(tokenString string) (userRecord, error) {
     }
 
     return userRecord{}, errors.New("user not found")
+}
+
+func bearerTokenFromRequest(r *http.Request) (string, error) {
+    headerValue := strings.TrimSpace(r.Header.Get("Authorization"))
+    if headerValue != "" {
+        return strings.TrimPrefix(headerValue, "Bearer "), nil
+    }
+
+    for _, part := range strings.Split(r.Header.Get("Cookie"), ";") {
+        key, value, ok := strings.Cut(strings.TrimSpace(part), "=")
+        if ok && strings.EqualFold(key, "token") {
+            return strings.TrimSpace(value), nil
+        }
+    }
+
+    return "", errors.New("missing bearer token")
 }
 
 func writeJSON(w http.ResponseWriter, status int, payload any) {
